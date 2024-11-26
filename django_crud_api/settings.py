@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders', #Comunicar servidores
-    'rest_framework', #Creacion de API
-    'tareas'
+    'rest_framework',  # API Framework
+    'coreapi',         # Documentación de la API
+    'corsheaders',     # Opcional: Comunicación entre servidores
+    'tareas',          # Tu aplicación personalizada
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #lista blanca
 CORS_ALLOWED_ORIGINS = [
 ]
+
+REST_FRAMEWORK = {
+    ...: ...,
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+}
