@@ -1,19 +1,37 @@
+import {useEffect} from 'react'
 import {useForm} from 'react-hook-form'
-import {creaTarea, eliminaTarea} from '../api/tareas.api'
+import {creaTarea, eliminaTarea, actualizaTarea, getTarea} from '../api/tareas.api'
 import {useNavigate, useParams} from 'react-router-dom'
 
 export function TaskForm() {
 
-  const {register, handleSubmit, formState:{errors} } = useForm();
+  const {register, handleSubmit, formState:{errors}, setValue } = useForm();
   const navigate = useNavigate();
   /*Muestra los parametros de la URL para este caso el ID */
   const params = useParams();
   console.log(params)
 
   const onSubmit = handleSubmit(async data => {
-    await creaTarea(data)
+    if (params.id) {
+      await actualizaTarea(params.id, data)
+    }else{
+      await creaTarea(data)
+    }
     navigate('/tareas')
   })
+
+  /*Agino valores al formulario para poder actualizar la tarea */
+  useEffect(()=> {
+    async function cargarTares(){
+      if (params.id){
+        const res = await getTarea(params.id)
+        /*Asigno los valores al formulario */
+        setValue('titulo', res.data.titulo)
+        setValue('descripcion', res.data.descripcion)
+      }
+    }
+    cargarTares();
+  },[])
 
   return (
     <div>
