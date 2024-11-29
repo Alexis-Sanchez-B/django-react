@@ -36,25 +36,6 @@ Ejecutar el servidor de desarrollo
 npm run dev
 El frontend estará disponible en: http://localhost:5173.
 
-📂 Estructura del Proyecto
-django-react/
-│
-├── cliente/                # Código del frontend (React.js)
-│   ├── src/
-│   │   ├── api/            # Configuración de Axios y servicios API
-│   │   ├── components/     # Componentes React
-│   │   ├── pages/          # Páginas principales
-│   │   └── styles/         # Estilos CSS
-│   └── package.json        # Dependencias de React
-│
-├── backend/                # Código del backend (Django)
-│   ├── tareas/             # Aplicación principal de tareas
-│   ├── settings.py         # Configuración de Django
-│   ├── urls.py             # Enrutamiento del backend
-│   └── manage.py           # Comando de gestión de Django
-│
-└── README.md               # Documentación del proyecto
-
 ⚙️ Funcionalidades Implementadas
 CRUD de Tareas:
 Crear, leer, actualizar y eliminar tareas desde el frontend interactuando con la API REST del backend.
