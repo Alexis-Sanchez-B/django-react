@@ -2,20 +2,22 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import {TaskPage} from './pages/TaskPage'
 import {TaskForm} from './pages/TaskForm'
 import {Navigation} from './components/Navigation'
+import {Toaster} from 'react-hot-toast'
 
 
 function App(){
   return(
     <BrowserRouter>
-
+    <div className="container mx-auto">
     <Navigation/>
-    
     <Routes>
     <Route path="/" element={ <Navigate to="/tareas"/>}/>
     <Route path="/tareas" element={<TaskPage/>} />
     <Route path="/tareas-crear" element={<TaskForm/>} />
     <Route path="/tareas/:id" element={<TaskForm/>} />
     </Routes>
+    <Toaster />
+    </div>
     </BrowserRouter>
   )
 }

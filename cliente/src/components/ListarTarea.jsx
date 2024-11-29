@@ -19,7 +19,7 @@ export function ListarTarea() {
   }, [])
 
     return (
-    <div>
+    <div className="grid grid-cols-3 gap-3">
         {tareas.map(tareas => (
             <TareaCard key={tareas.id} tareas={tareas} />
         ))}

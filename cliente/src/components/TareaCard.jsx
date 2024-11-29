@@ -5,11 +5,12 @@ export function TareaCard({tareas}) {
   const navigate = useNavigate();
 
   return (
-    <div  onClick={()=> {
+    <div  className="bg-zinc-800 p-3 hover:bg-zinc-700 hover:cursor-pointer"
+    onClick={()=> {
       navigate('/tareas/' + tareas.id)
-    }}>
-    <h1>{tareas.titulo}</h1>
-    <p>{tareas.descripcion}</p>
+    }} >
+    <h1 className="font-bold uppercase">{tareas.titulo}</h1>
+    <p className="text-slate-400" >{tareas.descripcion}</p>
     </div>
   )
 }
