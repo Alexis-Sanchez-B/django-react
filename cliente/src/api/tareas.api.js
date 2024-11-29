@@ -11,3 +11,7 @@ export const getTodasTareas = () => {
 export const creaTarea = (tareas) => {
     return tareasApi.post('/',tareas)
 }
+
+export const eliminaTarea = (id) => {
+    return tareasApi.delete(`/${id}/`) 
+}

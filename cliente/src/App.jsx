@@ -14,6 +14,7 @@ function App(){
     <Route path="/" element={ <Navigate to="/tareas"/>}/>
     <Route path="/tareas" element={<TaskPage/>} />
     <Route path="/tareas-crear" element={<TaskForm/>} />
+    <Route path="/tareas/:id" element={<TaskForm/>} />
     </Routes>
     </BrowserRouter>
   )
